@@ -46,13 +46,9 @@
         <p class="lead">This Example contains:</p>
         <div class="row">
           <div class="col-sm-6">
-            <p><b>5</b> Controllers<br />
+            <p><b>1</b> Controller<br />
               <ul>
-                <li>Dashboard</li>
-                <li>Login</li>
-                <li>Logout</li>
-                <li>Register</li>
-                <li>Welcome</li>
+                <li>Aauth_controller</li>
               </ul>
             </p>
           </div>
