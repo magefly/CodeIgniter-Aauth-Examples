@@ -1,14 +1,10 @@
 # CodeIgniter-Aauth-Examples
-## simple / separate controllers
+## simple / combined controllers
 
 ####This example contains:
 
-__5 controllers__
- - Dashboard
- - Login
- - Logout
- - Register
- - Welcome
+__1 controller__
+ - Aauth_controller
 
 __4 views__
  - dashboard
