@@ -1,3 +1,3 @@
 # CodeIgniter-Aauth-Examples
 
-__[simple / without security features](../../tree/simple-combined_controllers)__
+__[simple / without security features](../../tree/simple)__
