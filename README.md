@@ -1,16 +1,19 @@
 # CodeIgniter-Aauth-Examples
-## simple / combined controllers
+## simple | without any security feature
 
 ####This example contains:
 
-__1 controller__
- - Aauth_controller
+__2 controller__
+ - Account
+ - Welcome
 
-__4 views__
+__6 views__
  - dashboard
- - login
- - register
+ - sign_in
+ - sign_up
  - welcome
+ - remind_password
+ - reset_password
 
 __2 config files__
  - autoload
