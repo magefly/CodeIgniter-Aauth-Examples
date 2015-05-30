@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeIgniter-Aauth-Examples - Login</title>
+    <title>CodeIgniter-Aauth-Examples - Welcome</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/style.css">
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -29,12 +29,12 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="<?=site_url()?>/">Home</a></li>
            <?php if( !$this->aauth->is_loggedin() ) { ?>
-            <li><a href="<?=site_url()?>/login">Login</a></li>
-            <li><a href="<?=site_url()?>/register">Register</a></li>
+            <li><a href="<?=site_url()?>/account/sign_in">Sign In</a></li>
+            <li><a href="<?=site_url()?>/account/sign_up">Sign Up</a></li>
           <?php } ?>
           <?php if( $this->aauth->is_loggedin() ) { ?>
-            <li><a href="<?=site_url()?>/dashboard">Dashboard</a></li>
-            <li><a href="<?=site_url()?>/logout">Logout</a></li>
+            <li><a href="<?=site_url()?>/account/dashboard">Dashboard</a></li>
+            <li><a href="<?=site_url()?>/account/sign_out">Sign Out</a></li>
           <?php } ?>
           </ul>
         </div>
@@ -46,24 +46,25 @@
         <p class="lead">This Example contains:</p>
         <div class="row">
           <div class="col-sm-6">
-            <p><b>1</b> Controller<br />
+            <p><b>6</b> Views<br />
               <ul>
-                <li>Aauth_controller</li>
+                <li>dashboard</li>
+                <li>sign_in</li>
+                <li>sign_up</li>
+                <li>welcome</li>
+                <li>remind_password</li>
+                <li>reset_password</li>
               </ul>
             </p>
           </div>
           <div class="col-sm-6">
-            <p><b>4</b> Views<br />
+            <p><b>2</b> Controllers<br />
               <ul>
-                <li>dashboard</li>
-                <li>login</li>
-                <li>register</li>
-                <li>welcome</li>
+                <li>Account</li>
+                <li>Welcome</li>
               </ul>
             </p>
           </div>
-        </div>
-        <div class="row">
           <div class="col-sm-6">
             <p><b>2</b> Config Files<br />
               <ul>
@@ -72,6 +73,8 @@
               </ul>
             </p>
           </div>
+        </div>
+        <div class="row">
           <div class="col-sm-6">
             <p><b>1</b> Third Party Package</br>
               <ul>
@@ -79,8 +82,6 @@
               </ul>
             </p>
           </div>
-        </div>
-        <div class="row">
           <div class="col-sm-6">
             <p><b>1</b> Asset<br />
               <ul>
@@ -89,8 +90,6 @@
             </p>
           </div>
         </div>
-
-
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

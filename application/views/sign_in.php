@@ -1,17 +1,17 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeIgniter-Aauth-Examples - Login</title>
+    <title>CodeIgniter-Aauth-Examples - Sign In</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/style.css">
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -28,26 +28,20 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="<?=site_url()?>/">Home</a></li>
-            <li><a href="<?=site_url()?>/login">Login</a></li>
-            <li class="active"><a href="<?=site_url()?>/register">Register</a></li>
+            <li class="active"><a href="<?=site_url()?>/account/sign_in">Sign In</a></li>
+            <li><a href="<?=site_url()?>/account/sign_up">Sign Up</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
     <div class="container container-with-navbar">
-      <h1 class="col-sm-offset-2">Register</h1>
+      <h1 class="col-sm-offset-2">Sign In</h1>
       <form class="form-horizontal" method="POST">
         <div class="form-group">
           <label for="inputEmail" class="col-sm-2 control-label">Email</label>
           <div class="col-sm-10">
             <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputName" class="col-sm-2 control-label">Username</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" name="name" id="inputName" placeholder="Name" required>
           </div>
         </div>
         <div class="form-group">
@@ -58,9 +52,21 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">create account</button>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="remember" value="TRUE"> Remember me
+              </label>
+            </div>
           </div>
         </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-4">
+            <button type="submit" class="btn btn-default">sign in</button>
+          </div>
+          <div class="col-sm-6 text-right">
+            <a class="btn btn-link" href="<?=site_url()?>/account/remind_password" role="button">remind password</a>
+          </div>
+       </div>
       </form>
       <?php foreach ($this->aauth->get_errors_array() as $error){ ?>
         <div class="alert alert-danger" role="alert">
