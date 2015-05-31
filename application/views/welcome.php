@@ -34,6 +34,7 @@
           <?php } ?>
           <?php if( $this->aauth->is_loggedin() ) { ?>
             <li><a href="<?=site_url()?>/account/dashboard">Dashboard</a></li>
+            <li><a href="<?=site_url()?>/account/update">Update Profile</a></li>
             <li><a href="<?=site_url()?>/account/sign_out">Sign Out</a></li>
           <?php } ?>
           </ul>
@@ -46,7 +47,7 @@
         <p class="lead">This Example contains:</p>
         <div class="row">
           <div class="col-sm-6">
-            <p><b>6</b> Views<br />
+            <p><b>7</b> Views<br />
               <ul>
                 <li>dashboard</li>
                 <li>sign_in</li>
@@ -54,6 +55,7 @@
                 <li>welcome</li>
                 <li>remind_password</li>
                 <li>reset_password</li>
+                <li>update</li>
               </ul>
             </p>
           </div>

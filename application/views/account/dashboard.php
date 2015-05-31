@@ -29,6 +29,7 @@
           <ul class="nav navbar-nav">
             <li><a href="<?=site_url()?>/">Home</a></li>
             <li class="active"><a href="<?=site_url()?>/account/dashboard">Dashboard</a></li>
+            <li><a href="<?=site_url()?>/account/update">Update Profile</a></li>
             <li><a href="<?=site_url()?>/account/sign_out">Sign Out</a></li>
           </ul>
         </div>

@@ -5,7 +5,7 @@ class Account extends CI_Controller {
 
 	public function dashboard()
 	{
-		$this->load->view('dashboard');
+		$this->load->view('account/dashboard');
 	}
 
 	public function sign_out()
@@ -33,10 +33,10 @@ class Account extends CI_Controller {
 			if($this->aauth->login($email, $password, $remember)){
 				redirect('account/dashboard');
 			}else{
-				$this->load->view('sign_in');
+				$this->load->view('account/sign_in');
 			}
 		}else{
-			$this->load->view('sign_in');
+			$this->load->view('account/sign_in');
 		}
 	}
 
@@ -52,12 +52,12 @@ class Account extends CI_Controller {
 
 			if($this->aauth->create_user($email, $password, $name)){
 				$this->aauth->info('Your account has been created successfully and is ready to use. You can use the Login form.');
-				redirect('login');
+				redirect('account/login');
 			}else{
-				$this->load->view('sign_up');
+				$this->load->view('account/sign_up');
 			}
 		}else{
-			$this->load->view('sign_up');
+			$this->load->view('account/sign_up');
 		}
 	}
 
@@ -72,9 +72,9 @@ class Account extends CI_Controller {
 			$this->aauth->remind_password($email);
 			$this->aauth->info('The Account Verification mail will be sent to your email address.');
 
-			$this->load->view('remind_password');
+			$this->load->view('account/remind_password');
 		}else{
-			$this->load->view('remind_password');
+			$this->load->view('account/remind_password');
 		}
 	}
 
@@ -92,10 +92,44 @@ class Account extends CI_Controller {
 			}else{
 				$this->aauth->error('E-mail Address and Verification Code do not match.');
 			}
-			$this->load->view('reset_password');
+			$this->load->view('account/reset_password');
 		}else{
-			$this->load->view('reset_password');
+			$this->load->view('account/reset_password');
 		}
 	}
-
+	public function update()
+	{
+		if(!$this->aauth->is_loggedin()){
+			redirect('account/sign_in');
+		}
+		if($this->input->post()){
+			$user = $this->aauth->get_user();
+			$user_id = $user->id;
+			if(!empty($this->input->post('email'))){
+				$email = $this->input->post('email');
+			}else{
+				$email = FALSE;
+			}
+			if(!empty($this->input->post('password'))){
+				$password = $this->input->post('password');
+			}else{
+				$password = FALSE;
+			}
+			if(!empty($this->input->post('name'))){
+				$name = $this->input->post('name');
+			}else{
+				$name = FALSE;
+			}
+			if($email == FALSE AND $password == FALSE AND $name == FALSE){
+				$this->load->view('account/update');
+				return FALSE;
+			}
+			if($this->aauth->update_user($user_id, $email, $password, $name)){
+				$this->aauth->info('Your account has been updated successfully.');
+			}
+			$this->load->view('account/update');
+		}else{
+			$this->load->view('account/update');
+		}
+	}
 }

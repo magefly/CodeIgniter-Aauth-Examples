@@ -7,14 +7,15 @@ __2 controller__
  - Account
  - Welcome
 
-__6 views__
+__7 views__
  - dashboard
  - sign_in
  - sign_up
  - welcome
  - remind_password
  - reset_password
-
+ - update
+ 
 __2 config files__
  - autoload
  - routes
